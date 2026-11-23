@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASANZ DUNGEONS — La FP contraataca</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top-bar">
+      <div>
+        <div class="eyebrow">⚡ Edición definitiva · 100% offline</div>
+        <h1>MASANZ <span>DUNGEONS</span></h1>
+        <p class="subtitle">Sobrevive a DAM. Haz aliados. Derrota exámenes. Y que compile lo que Dios quiera.</p>
+      </div>
+      <div class="config-toggle">
+        <button id="configBtn">⚙ Ajustes</button>
+      </div>
+    </header>
+
+    <section class="status-panel">
+      <div class="resources" id="resourceBars"></div>
+      <div class="allies">
+        <h2>Aliados</h2>
+        <ul id="allyList"></ul>
+      </div>
+      <div class="equipment" id="equipmentPanel"></div>
+      <div class="location" id="locationInfo"></div>
+      <div class="minimap" id="miniMap"></div>
+    </section>
+
+    <section class="mission-panel" aria-label="Objetivo de fuga"><div><h2>🛰 Operación: Salir de clase</h2><p>Busca la tarjeta del CPD, el plano de la azotea y una llave. O sobrevive al curso.</p></div><div class="mission-stats" id="missionStats"></div></section>
+    <section id="combatHud" class="combat-hud" aria-live="polite"></section>
+    <main class="main-layout">
+      <section class="story-panel">
+        <div class="panel-heading"><h2>📟 Registro de supervivencia</h2><small id="turnDisplay">TURNO 000</small></div><div id="storyLog" class="story-log" role="log" aria-live="polite"></div>
+      </section>
+      <section class="actions-panel">
+        <div class="panel-heading"><h2>🎮 ¿Qué hacemos, máquina?</h2><small>TECLAS 1–9</small></div>
+        <div id="actionButtons" class="actions"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button id="saveBtn">💾 Guardar</button>
+      <button id="loadBtn">📂 Cargar</button>
+      <button id="deleteBtn">🗑 Borrar guardado</button>
+      <button id="newGameBtn">✨ Nueva partida</button>
+    </footer>
+  </div>
+
+  <div id="configPanel" class="config-panel hidden">
+    <h3>⚙ Ajustes de supervivencia</h3>
+    <label>
+      <input type="checkbox" id="fastTextToggle">
+      Modo rápido (menos animación)
+    </label>
+    <label><input type="checkbox" id="soundToggle"> Sonidos arcade (si el navegador lo permite)</label>
+    <button id="exportBtn">⬇ Exportar partida (.json)</button>
+    <button id="importBtn">⬆ Importar partida (.json)</button>
+    <input type="file" id="importFile" accept=".json,application/json" class="hidden">
+    <button id="closeConfig">Cerrar</button>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/items.js"></script>
+  <script src="js/gameState.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/extras.js"></script>
+</body>
+</html>
